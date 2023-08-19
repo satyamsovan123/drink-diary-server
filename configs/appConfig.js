@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const appConfig = {
+  webFrontendURL: process.env.WEB_FRONTEND_URL,
   appName: process.env.APP_NAME,
   environment: process.env.NODE_ENV,
   port: JSON.parse(process.env.PORT),
