@@ -13,11 +13,16 @@ const routes = require("./app/routes");
 
 app.use(
   cors({
-    origin: ["http://localhost:4200", "https://drink-diary-web.web.app/"],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
   })
 );
+
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "https://drink-diary-web.web.app/");
+//   next();
+// });
 
 app.use(express.json());
 // app.use((req, res, next) => {
