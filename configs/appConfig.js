@@ -1,11 +1,11 @@
-// const dotenv = require("dotenv");
-// require("dotenv").config();
+const dotenv = require("dotenv");
+require("dotenv").config();
 
-// if (process.env.NODE_ENV === "production") {
-//   dotenv.config({ path: ".env.prod" });
-// } else {
-//   dotenv.config({ path: ".env.dev" });
-// }
+if (process.env.NODE_ENV === "production") {
+  dotenv.config({ path: ".env.prod" });
+} else {
+  dotenv.config({ path: ".env.dev" });
+}
 
 const appConfig = {
   appName: process.env.APP_NAME,

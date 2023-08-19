@@ -11,8 +11,7 @@ const routes = require("./app/routes");
 
 app.use(
   cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    origin: "https://drink-diary-web.web.app/",
   })
 );
 app.use(express.json());
