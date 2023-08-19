@@ -9,13 +9,10 @@ const { serverConstant } = require("./constants/serverConstant");
 const app = express();
 const routes = require("./app/routes");
 
-app.options("*", cors());
-
+// app.options("*", cors());
 app.use(
   cors({
-    origin: [appConfig.webFrontendURL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
+    origin: "https://drink-diary-web.web.app/",
   })
 );
 
