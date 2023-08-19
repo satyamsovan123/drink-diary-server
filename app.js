@@ -19,10 +19,10 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://drink-diary-web.web.app");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "https://drink-diary-web.web.app");
+//   next();
+// });
 
 app.use(express.json());
 // app.use((req, res, next) => {
