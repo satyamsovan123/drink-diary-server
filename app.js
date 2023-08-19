@@ -11,11 +11,11 @@ const routes = require("./app/routes");
 
 // app.options("*", cors());
 
-const frontendURL = "https://drink-diary-web.web.app";
-
+const webFrontendURL = appConfig.webFrontendURL;
+console.log(webFrontendURL);
 app.use(
   cors({
-    origin: frontendURL,
+    origin: webFrontendURL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
   })
