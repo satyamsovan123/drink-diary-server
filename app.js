@@ -11,8 +11,14 @@ const routes = require("./app/routes");
 
 // app.options("*", cors());
 
-const webFrontendURL = appConfig.webFrontendURL;
+const webFrontendURL =
+  appConfig.environment === "production"
+    ? "https://drink-diary-web.web.app"
+    : "http://localhost:4200";
+// const webFrontendURL = "http://localhost:4200";
+
 console.log(webFrontendURL);
+
 app.use(
   cors({
     origin: webFrontendURL,
