@@ -10,19 +10,14 @@ const app = express();
 const routes = require("./app/routes");
 
 // app.options("*", cors());
+
 app.use(
   cors({
-    origin: ["https://drink-diary-web.web.app/"],
+    origin: ["*"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
   })
 );
-
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://drink-diary-web.web.app"
-  );
-  next();
-});
 
 // app.use(express.json());
 // app.use((req, res, next) => {
