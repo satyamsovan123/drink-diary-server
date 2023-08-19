@@ -13,14 +13,14 @@ const routes = require("./app/routes");
 
 app.use(
   cors({
-    origin: "https://drink-diary-web.web.app/",
+    origin: "https://drink-diary-web.web.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
   })
 );
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://drink-diary-web.web.app/");
+  res.header("Access-Control-Allow-Origin", "https://drink-diary-web.web.app");
   next();
 });
 
