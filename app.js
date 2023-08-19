@@ -12,7 +12,7 @@ const routes = require("./app/routes");
 // app.options("*", cors());
 app.use(
   cors({
-    origin: "https://drink-diary-web.web.app/",
+    origin: ["https://drink-diary-web.web.app/"],
   })
 );
 
