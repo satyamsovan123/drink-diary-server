@@ -9,21 +9,24 @@ const { serverConstant } = require("./constants/serverConstant");
 const app = express();
 const routes = require("./app/routes");
 
+app.options("*", cors());
+
 app.use(
   cors({
     origin: [appConfig.webFrontendURL],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    // exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
+    exposedHeaders: [serverConstant.AUTHORIZATION_HEADER_KEY],
   })
 );
-app.use(express.json());
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Expose-Headers",
-    serverConstant.AUTHORIZATION_HEADER_KEY
-  );
-  next();
-});
+
+// app.use(express.json());
+// app.use((req, res, next) => {
+//   res.header(
+//     "Access-Control-Expose-Headers",
+//     serverConstant.AUTHORIZATION_HEADER_KEY
+//   );
+//   next();
+// });
 app.use(routes);
 
 connectToMongoDB();
