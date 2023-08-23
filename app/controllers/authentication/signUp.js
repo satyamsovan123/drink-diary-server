@@ -24,7 +24,7 @@ const signUp = async (req, res) => {
     );
 
     const token = await generateJWT({ email: userData.email });
-    logger([`Sign in `, userData.email]);
+    logger([`Sign up `, userData.email]);
 
     const generatedResponse = responseBuilder(
       {},
